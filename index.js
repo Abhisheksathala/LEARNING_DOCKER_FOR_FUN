@@ -18,7 +18,6 @@ app.get('/products', (req, res) => {
   //   { id: 2, name: 'product 2', price: 200 },
   //   { id: 3, name: 'product 3', price: 300 },
   // ]);
-
   res.send('hello');
 });
 
