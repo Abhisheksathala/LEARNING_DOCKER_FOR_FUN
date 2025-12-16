@@ -10,3 +10,4 @@ creat sh file useing nano files naem
 !#/bin/bash
 
 write code there contol + o enter control + x
+
