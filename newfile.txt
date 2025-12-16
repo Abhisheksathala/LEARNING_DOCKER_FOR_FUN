@@ -4,3 +4,9 @@ rm rm -r mkdir pws
 grep
 #-->shall
 chmod +x firstscript.sh
+
+creat sh file useing nano files naem
+
+!#/bin/bash
+
+write code there contol + o enter control + x
