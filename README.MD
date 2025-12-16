@@ -83,3 +83,7 @@ docker rmi -f nginx
 ```
 
 ---
+
+docker build -t for tag mern-backend
+docker run -p 5000:5000 --name backend mern-backend
+docker run -p 5000:5000 --name backend --env-file.env mern-backend
