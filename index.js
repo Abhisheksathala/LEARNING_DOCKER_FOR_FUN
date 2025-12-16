@@ -29,10 +29,11 @@ mongoose
   .connect('mongodb://admin:12345678@localhost:27017/admin')
   .then(() => {
     console.log('MongoDB connected');
-    app.listen(PORT, () => {
-      console.log(`Server is removed bro running on port ${PORT}`);
-    });
   })
   .catch((error) => {
     console.error('MongoDB connection failed:', error.message);
   });
+
+app.listen(PORT, () => {
+  console.log(`Server is removed bro running on port ${PORT}`);
+});
