@@ -87,3 +87,9 @@ docker rmi -f nginx
 docker build -t for tag mern-backend
 docker run -p 5000:5000 --name backend mern-backend
 docker run -p 5000:5000 --name backend --env-file.env mern-backend
+
+docker-compose up --build
+docker-compose up --build -d
+docker-compose down
+docker compose log,
+docker-compose logs, docker-compose logs backend/frontend
