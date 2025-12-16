@@ -7,13 +7,13 @@ WORKDIR /app
 
 
 FROM base AS bulider
-COPY  package*.json . 
+COPY  package*.json .
 RUN npm install
 COPY . .
 RUN npm run build
 
 
-FROM base AS production 
+FROM base AS production
 WORKDIR /app
 COPY  --from=bulider /app/dist ./dist
 COPY  --from=bulider /app/package*.json ./
@@ -22,3 +22,6 @@ RUN npm install --omit=dev
 
 
 EXPOSE 8000
+
+
+
