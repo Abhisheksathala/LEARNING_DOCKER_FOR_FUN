@@ -1,13 +1,11 @@
 name: build-and-lint
 
-# Trigger: define when this workflow should run
 on:
   push:
     branches: [main, dev, abhishek]
   pull_request:
     branches: [main, dev, abhishek]
 
-# Jobs
 jobs:
   build-and-lint:
     runs-on: ubuntu-latest
@@ -21,14 +19,16 @@ jobs:
         with:
           node-version: 20
 
+      # 🔹 Backend (dockerfolder)
       - name: Install backend deps
-        working-directory: server
+        working-directory: DOCKER
         run: npm ci
 
       - name: Lint backend
-        working-directory: server
+        working-directory: DOCKER
         run: npm run lint -- --max-warnings=0
 
+      # 🔹 Frontend (client)
       - name: Install frontend deps
         working-directory: client
         run: npm ci
@@ -37,8 +37,9 @@ jobs:
         working-directory: client
         run: npm run lint -- --max-warnings=0
 
+      # 🔹 Docker builds
       - name: Build backend Docker image
-        run: docker build -t backend ./server
+        run: docker build -t backend ./DOCKER
 
       - name: Build frontend Docker image
         run: docker build -t frontend ./client
