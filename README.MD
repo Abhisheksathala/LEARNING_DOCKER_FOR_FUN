@@ -1,5 +1,5 @@
 docker run -d -p 8080:80 nginx
-Here’s a clean **README-style copy** of the text from the image, properly formatted so you can paste it directly into your repo 👇
+
 
 ---
 
